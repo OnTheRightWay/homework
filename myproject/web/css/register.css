@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 楷体;
+    background-color: rgb(243,247,250);
+    width: 1920px;
+}
+a{
+    color: black;
+    text-decoration-line: none;
+}
+.head{
+    background-color: white;
+    /*border: solid 1px black;*/
+    height: 95px;
+}
+.log{
+    float: left;
+    margin: 20px;
+    /*border: solid 1px black;*/
+    height: 55px;
+    width: 355px;
+}
+.log img{
+    float: left;
+}
+.log .word1
+{
+    line-height: 55px;
+    /*border: solid 1px black;*/
+    height: 55px;
+    float: left;
+    margin-bottom: 30px;
+}
+.log .word2{
+    float: left;
+    width: 150px;
+    /*border: solid 1px black;*/
+    font-size: 25px;
+    font-family: 黑体;
+    /*margin-bottom: 20px;*/
+    line-height: 55px;
+    margin-left: 15px;
+}
+.body{
+    margin:100px auto auto auto;
+    background-color: white;
+    width: 94%;
+    height: 638px;
+    padding-top: 110px;
+}
+.body .register{
+    /*border: solid 1px black;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 550px;
+}
+.yx span{
+    color: rgb(71,123,192);
+    font-size: 25px;
+}
+.yx{
+
+    margin-left: 90px;
+    width: 180px;
+    margin-bottom: 70px;
+    border-bottom: solid 4px rgb(86,128,211);
+}
+.yx img{
+    margin-left: 10px;
+    /*margin-left: 90px;*/
+}
+.username{
+    height: 70px;
+    width: 620px;
+    margin: auto;
+    padding-left: 18px;
+}
+.password{
+    /*border: solid 1px black;*/
+    height: 70px;
+    width: 620px;
+    margin: 20px auto 0 auto;
+    padding-left: 18px;
+}
+.agree{
+    height: 80px;
+    width: 560px;
+    margin: 0 auto 10px 90px;
+    line-height: 80px;
+    /*border: solid 1px black;*/
+}
+.next{
+    /*border: solid 1px black;*/
+    width: 450px;
+    height: 60px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 90px;
+    background-color: rgb(59,128,229);
+
+}

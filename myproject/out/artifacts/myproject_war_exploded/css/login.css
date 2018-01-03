@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 楷体;
+    background-color: rgb(243,247,250);
+    width: 1920px;
+}
+a{
+    target:"_blank";
+    color: black;
+    text-decoration-line: none;
+}
+.head{
+    background-color: white;
+    /*border: solid 1px black;*/
+    height: 95px;
+}
+.log{
+    float: left;
+    margin: 20px;
+    /*border: solid 1px black;*/
+    height: 55px;
+    width: 280px;
+}
+.log img{
+    float: left;
+}
+.log .word1
+{
+    line-height: 55px;
+    /*border: solid 1px black;*/
+    height: 55px;
+    float: left;
+    margin-bottom: 30px;
+}
+.log .word2{
+    float: left;
+    width: 75px;
+    /*border: solid 1px black;*/
+    font-size: 25px;
+    font-family: 黑体;
+    /*margin-bottom: 20px;*/
+    line-height: 55px;
+    margin-left: 15px;
+}
+.head ul{
+    margin: 40px 10px auto auto;
+    list-style-type: none;
+    /*border: solid 1px black;*/
+    width: 260px;
+    height: 20px;
+    float: right;
+}
+.head li{
+    /*border-right: solid 1px black;*/
+    font-size: 20px;
+    padding: 0 20px;
+    line-height: 20px;
+    float: left;
+}
+.head li a{
+    color: rgb(94,131,241);
+}
+.body{
+    margin:120px auto auto auto;
+    /*border: solid 1px black;*/
+    width: 1280px;
+    height: 670px;
+}
+.dream{
+    float: left;
+    margin: 100px 0;
+}
+.input{
+    background-color: white;
+    /*border: solid 1px black;*/
+    float: right;
+    height: 100%;
+    width: 565px;
+}
+.input [class]{
+    /*border: solid 1px black;*/
+    margin: 15px auto;
+    width: 400px;
+    height: 70px;
+}
+.input .word1{
+    height: 40px;
+    padding-top: 30px;
+    font-size: 30px;
+    text-align: center;
+}
+.input .word2{
+    /*border: solid 1px black;*/
+    margin: 85px auto 0 auto;
+}
+.input .username{
+    margin-left: 55px;
+    padding-left: 50px;
+    /*background: url("../img/邮箱.png") no-repeat 10px 20px;*/
+}
+.input .password{
+    padding-left: 50px;
+    margin-left: 55px;
+}
+.input .button{
+    /*border: solid 1px black;*/
+    font-size: 30px;
+    color: white;
+    margin-left: 55px;
+    background-color: rgb(59,128,229);
+}
+.input .word3{
+    margin: 15px auto 0 auto;
+    /*border: solid 1px black;*/
+}
+#time{
+    float: right;
+    height: 30px;
+    width: 300px;
+    text-align: right;
+    padding-right: 20px;
+    color: red;
+    line-height: 30px;
+    font-size: 20px;
+    /*border: solid 1px black*/
+}
+#u{
+    transform: translateX(-446px)translateY(9px)
+}
+#p{
+    transform: translateX(-446px)translateY(9px)
+}
