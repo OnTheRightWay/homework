@@ -22,76 +22,110 @@
     <table id="14" parent="2" name="hw_stu"/>
     <table id="15" parent="2" name="student"/>
     <table id="16" parent="2" name="teacher"/>
-    <table id="17" parent="13" name="user"/>
-    <column id="18" parent="14" name="id">
+    <table id="17" parent="13" name="book"/>
+    <table id="18" parent="13" name="user"/>
+    <column id="19" parent="14" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="19" parent="14" name="name">
+    <column id="20" parent="14" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="20" parent="14" name="gender">
+    <column id="21" parent="14" name="gender">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="21" parent="14" name="chinese">
+    <column id="22" parent="14" name="chinese">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="22" parent="14" name="math">
+    <column id="23" parent="14" name="math">
       <Position>5</Position>
       <DataType>double|0</DataType>
     </column>
-    <column id="23" parent="14" name="english">
+    <column id="24" parent="14" name="english">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="24" parent="14" name="age">
+    <column id="25" parent="14" name="age">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="25" parent="15" name="id">
+    <column id="26" parent="15" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="15" name="name">
+    <column id="27" parent="15" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="27" parent="15" name="PRIMARY">
+    <key id="28" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="28" parent="16" name="name">
+    <column id="29" parent="16" name="name">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="29" parent="16" name="age">
+    <column id="30" parent="16" name="age">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="30" parent="16" name="gender">
+    <column id="31" parent="16" name="gender">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="31" parent="16" name="score">
+    <column id="32" parent="16" name="score">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="32" parent="17" name="username">
+    <column id="33" parent="17" name="bid">
       <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="33" parent="17" name="password">
+    <column id="34" parent="17" name="bname">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="34" parent="17" name="PRIMARY">
+    <column id="35" parent="17" name="price">
+      <Position>3</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="36" parent="17" name="author">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="37" parent="17" name="book_bname_uindex">
+      <ColNames>bname</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="38" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>bid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="39" parent="17" name="book_bname_uindex">
+      <ColNames>bname</ColNames>
+      <UnderlyingIndexName>book_bname_uindex</UnderlyingIndexName>
+    </key>
+    <column id="40" parent="18" name="username">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="18" name="password">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="42" parent="18" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>username</ColNames>
       <Primary>1</Primary>

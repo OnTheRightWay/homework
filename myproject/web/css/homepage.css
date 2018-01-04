@@ -58,6 +58,7 @@ a{
     width: 200px;
     height: 760px;
     background-color: rgb(200,200,200);
+    float: left;
 }
 #user{float: right;
     height: 50px;

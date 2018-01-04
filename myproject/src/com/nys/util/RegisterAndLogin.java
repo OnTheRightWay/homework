@@ -1,7 +1,7 @@
 package com.nys.util;
 
 import com.nys.bean.User;
-import com.nys.dao.Dao;
+import com.nys.dao.UserDao;
 
 public class RegisterAndLogin {
     public static boolean register(User user){
@@ -17,11 +17,11 @@ public class RegisterAndLogin {
             return false;
 
         }
-        if (Dao.queryPassword(username)!=null){
+        if (UserDao.queryPassword(username)!=null){
             return false;
 
         }
-        Dao.insert(user);
+        UserDao.insert(user);
         return true;
     }
     public static boolean login(User user){
@@ -33,7 +33,7 @@ public class RegisterAndLogin {
         if (password==null){
             return false;
         }
-        String p = Dao.queryPassword(username);
+        String p = UserDao.queryPassword(username);
         if (p==null){
             return false;
         }
