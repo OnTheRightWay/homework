@@ -11,14 +11,28 @@ import java.util.List;
 
 public class BookDao {
     QueryUtil queryUtil = new QueryUtil();
-    public Book queryByBname(String bname){
+    public List<Book> queryByBname(String bkname){
+        List<Book> books = null;
+        try {
+              books = queryUtil.query(
+                    JDBCUtil.getConnection(),
+                    "select * from book where bkname=?",
+                    new BeanListHandler<Book>(Book.class),
+                    bkname
+            );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return books;
+    }
+    public Book queryByBkid(int bkid){
         Book book = null;
         try {
-             book = queryUtil.query(
+            book = queryUtil.query(
                     JDBCUtil.getConnection(),
-                    "select * from Book where bname=?",
+                    "select * from book where bkid=?",
                     new BeanHandler<Book>(Book.class),
-                    bname
+                    bkid
             );
         } catch (SQLException e) {
             e.printStackTrace();
@@ -30,7 +44,7 @@ public class BookDao {
         try {
             books = queryUtil.query(
                     JDBCUtil.getConnection(),
-                    "select * from Book",
+                    "select * from book",
                     new BeanListHandler<Book>(Book.class)
             );
         } catch (SQLException e) {
@@ -42,12 +56,24 @@ public class BookDao {
         try {
             queryUtil.update(
                     JDBCUtil.getConnection(),
-                    "insert into Book values(null,?,?,?);",
-                    book.getBname(),book.getPrice(),book.getAuthor()
+                    "insert into book values(?,?,?,?,?,?,?);",
+                    book.getBkid(),book.getBkname(),book.getAuthor(),
+                    book.getPrice(),book.getCover(),book.getDetails(),book.getType()
             );
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+    }
+    public void deleteByBkid(String bkid){
+        try {
+            queryUtil.update(
+                    JDBCUtil.getConnection(),
+                    "delete from book where bkid=?",
+                    bkid
+            );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

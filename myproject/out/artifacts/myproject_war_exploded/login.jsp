@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,21 +26,12 @@
         <img src="img/Dream.png" class="dream">
         <div class="input">
             <p class="word1"><span style="font-family: 鹿亡玫瑰海by木一">RW</span>登录</p>
-            <form action="login" method="post">
+            <form action="<c:url value="/user?method=login"/>" method="post">
                 <input name="username" type="text"class="username" style="font-size: 20px;font-family: 楷体"
                        placeholder="邮箱地址"
                        onfocus=usernameOnFocus(this)
                        onblur=usernameOnBlur(this)
-                       <%
-                            String username = (String) application.getAttribute("username");
-                            if (username!=null)
-                            {
-                       %>
-                       value=<%=username%>
-                               <%
-                               }
-                               %>
-
+                       value="${cookie.username.value}"
                 >
                 <img id="u" src="img/用户.png">
                 <input name="password" type="password"class="password" style="font-size: 20px;font-family: 楷体"
@@ -64,7 +56,7 @@
                 >
             </form>
             <div class="word3">
-                <span style="float: left">还没有账号？<a href="register.html" style="color:rgb(71,118,209)" target="_blank">免费注册</a></span>
+                <span style="float: left">还没有账号？<a href="register.jsp" style="color:rgb(71,118,209)" target="_blank">免费注册</a></span>
                 <span style="float: right"><a href="" style="color:rgb(71,118,209) ">忘记密码？</a></span>
             </div>
         </div>

@@ -23,109 +23,150 @@
     <table id="15" parent="2" name="student"/>
     <table id="16" parent="2" name="teacher"/>
     <table id="17" parent="13" name="book"/>
-    <table id="18" parent="13" name="user"/>
-    <column id="19" parent="14" name="id">
+    <table id="18" parent="13" name="shopping"/>
+    <table id="19" parent="13" name="user"/>
+    <column id="20" parent="14" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="20" parent="14" name="name">
+    <column id="21" parent="14" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="21" parent="14" name="gender">
+    <column id="22" parent="14" name="gender">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="22" parent="14" name="chinese">
+    <column id="23" parent="14" name="chinese">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="23" parent="14" name="math">
+    <column id="24" parent="14" name="math">
       <Position>5</Position>
       <DataType>double|0</DataType>
     </column>
-    <column id="24" parent="14" name="english">
+    <column id="25" parent="14" name="english">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="25" parent="14" name="age">
+    <column id="26" parent="14" name="age">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="26" parent="15" name="id">
+    <column id="27" parent="15" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="27" parent="15" name="name">
+    <column id="28" parent="15" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <key id="28" parent="15" name="PRIMARY">
+    <key id="29" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="29" parent="16" name="name">
+    <column id="30" parent="16" name="name">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="30" parent="16" name="age">
+    <column id="31" parent="16" name="age">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="31" parent="16" name="gender">
+    <column id="32" parent="16" name="gender">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="32" parent="16" name="score">
+    <column id="33" parent="16" name="score">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="33" parent="17" name="bid">
+    <column id="34" parent="17" name="bkid">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="34" parent="17" name="bname">
+    <column id="35" parent="17" name="bkname">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="17" name="price">
-      <Position>3</Position>
-      <DataType>double|0</DataType>
-    </column>
     <column id="36" parent="17" name="author">
-      <Position>4</Position>
+      <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;undefined&apos;</DefaultExpression>
     </column>
-    <index id="37" parent="17" name="book_bname_uindex">
-      <ColNames>bname</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="38" parent="17" name="PRIMARY">
+    <column id="37" parent="17" name="price">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="38" parent="17" name="cover">
+      <Position>5</Position>
+      <DataType>varchar(200)|0</DataType>
+      <DefaultExpression>&apos;http://a4.att.hudong.com/84/60/01300000506940125602608029640.gif  &apos;</DefaultExpression>
+    </column>
+    <column id="39" parent="17" name="details">
+      <Position>6</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="40" parent="17" name="type">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+      <DefaultExpression>&apos;其他&apos;</DefaultExpression>
+    </column>
+    <key id="41" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>bid</ColNames>
+      <ColNames>bkid</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="39" parent="17" name="book_bname_uindex">
-      <ColNames>bname</ColNames>
-      <UnderlyingIndexName>book_bname_uindex</UnderlyingIndexName>
-    </key>
-    <column id="40" parent="18" name="username">
+    <column id="42" parent="18" name="username">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="41" parent="18" name="password">
+    <column id="43" parent="18" name="bkid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="44" parent="18" name="fk_bkid">
+      <ColNames>bkid</ColNames>
+    </index>
+    <index id="45" parent="18" name="fk_username">
+      <ColNames>username</ColNames>
+    </index>
+    <foreign-key id="46" parent="18" name="fk_username">
+      <ColNames>username</ColNames>
+      <RefSchemaName>myproject</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>username</RefColNames>
+    </foreign-key>
+    <foreign-key id="47" parent="18" name="fk_bkid">
+      <ColNames>bkid</ColNames>
+      <RefSchemaName>myproject</RefSchemaName>
+      <RefTableName>book</RefTableName>
+      <RefColNames>bkid</RefColNames>
+    </foreign-key>
+    <column id="48" parent="19" name="username">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="19" name="password">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="42" parent="18" name="PRIMARY">
+    <column id="50" parent="19" name="level">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="51" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>username</ColNames>
       <Primary>1</Primary>

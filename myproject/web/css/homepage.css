@@ -70,3 +70,42 @@ a{
     line-height: 50px;
 
 }
+a{
+    text-decoration-line: none;
+    color: black;
+}
+
+td{
+    width: 100px;
+    height: 20px;
+    /*border: solid 1px black;*/
+}
+table {
+    float: left;
+    width: 160px;
+    height: 200px;
+    margin: 36px;
+}
+tr{
+    /*text-align: center;*/
+    width: 100px;
+    height: 20px;
+}
+.cover{
+    width: 150px;
+    height: 200px;
+}
+#show{
+    /*border: solid 1px black;*/
+    margin: auto;
+    height: 650px;
+    width: 1625px;
+    float: left;
+}
+ul{
+    list-style-type: none;
+}
+ul button{
+    width: 100px;
+    height: 50px;
+}

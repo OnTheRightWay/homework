@@ -49,4 +49,20 @@ public class QueryUtil extends QueryRunner{
         connection.close();
         return update;
     }
+
+    @Override
+    public <T> T insert(Connection conn, String sql, ResultSetHandler<T> rsh) throws SQLException {
+        connection = conn;
+        T insert = super.insert(conn, sql, rsh);
+        connection.close();
+        return insert;
+    }
+
+    @Override
+    public <T> T insert(Connection conn, String sql, ResultSetHandler<T> rsh, Object... params) throws SQLException {
+        connection=conn;
+        T insert = super.insert(conn, sql, rsh, params);
+        connection.close();
+        return insert;
+    }
 }

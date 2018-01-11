@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="Jar:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Jar_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Jar.jar">
+        <element id="module-output" name="Jar" />
+      </element>
+    </root>
+  </artifact>
+</component>
