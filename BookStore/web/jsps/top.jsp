@@ -40,12 +40,17 @@
 			请登录
 		</c:if>
 		&nbsp;&nbsp;|&nbsp;&nbsp;
-		<a href="<c:url value='/jsps/cart/list.jsp'/>" target="body">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-		<a href="<c:url value='/order?method=findByUid'/>" target="body">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<c:if test="${user}">
+		<a href="<c:url value='/jsps/cart/list.jsp'/>" target="left">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="<c:url value='/order?method=findByUid'/>" target="left">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<a href="<c:url value="/user?method=quit"/> " target="_parent">退出</a>
+	</c:if>
 		<br/>
-		<a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">登录</a> |&nbsp; 
+	<c:if test="${!user}">
+		<a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">登录</a> |&nbsp;
 		<a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	</c:if>
+		<a href="<c:url value='/category?method=queryAll'/>" target="left">查看书籍</a>
 		<a href="<c:url value='/adminjsps/admin/main.jsp'/>" target="_parent">进入管理页面</a>
 
 </div>

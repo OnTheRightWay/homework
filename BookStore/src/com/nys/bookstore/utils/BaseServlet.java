@@ -37,6 +37,9 @@ public class BaseServlet extends HttpServlet{
         }
         try {
             String result = (String) method.invoke(this, req, resp);
+            if (result.equals("")){
+                return;
+            }
             String[] split = result.split(":");
             String type = split[0];
             String path = split[1];

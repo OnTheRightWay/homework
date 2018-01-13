@@ -3,6 +3,8 @@ package com.nys.bookstore.book.web;
 import com.nys.bookstore.book.dao.BookDao;
 import com.nys.bookstore.book.domain.Book;
 import com.nys.bookstore.utils.BaseServlet;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,14 +19,28 @@ public class BookServlet extends BaseServlet {
     private BookDao bookDao = new BookDao();
     public String findAll(HttpServletRequest request,HttpServletResponse response){
         List<Book> list = bookDao.queryAll();
-        request.setAttribute("books",list);
-        return "f:/jsps/book/list.jsp";
+        JSONArray jsonArray = JSONArray.fromObject(list);
+        try {
+            response.getWriter().write(jsonArray.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        request.setAttribute("books",list);
+//        return "f:/jsps/book/list.jsp";
+        return "";
     }
     public String findByCname(HttpServletRequest request,HttpServletResponse response){
         String cname = request.getParameter("cname");
         List<Book> books = bookDao.queryByCname(cname);
-        request.setAttribute("books",books);
-        return "f:/jsps/book/list.jsp";
+        JSONArray jsonArray = JSONArray.fromObject(books);
+        try {
+            response.getWriter().write(jsonArray.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        request.setAttribute("books",books);
+//        return "f:/jsps/book/list.jsp";
+        return "";
     }
     public String showBook(HttpServletRequest request,HttpServletResponse response){
         String bid = request.getParameter("bid");

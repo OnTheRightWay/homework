@@ -12,6 +12,7 @@
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+      <script src="../../js/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -29,65 +30,42 @@
 	}
 </style>
   </head>
-  
+
   <body>
 
-  <c:forEach var="book" items="${requestScope.books}">
-      <div class="icon">
-      <a href="<c:url value="/book?method=showBook&bid=${book.bid}"/>">
-          <img src="<c:url value='${book.image}'/>" border="0"/></a>
-      <br/>
-      <a href="<c:url value='/jsps/book/desc.jsp'/>">${book.bname}</a>
-      </div>
-  </c:forEach>
-  <%--<div class="icon">--%>
-    <%--<a href="<c:url value='/jsps/book/desc.jsp'/>"><img src="<c:url value='/book_img/8758723-1_l.jpg'/>" border="0"/></a>--%>
+  <%--<c:forEach var="book" items="${requestScope.books}">--%>
+      <%--<div class="icon">--%>
+      <%--<a href="<c:url value="/book?method=showBook&bid=${book.bid}"/>">--%>
+          <%--<img src="<c:url value='${book.image}'/>" border="0"/></a>--%>
       <%--<br/>--%>
-   	<%--<a href="<c:url value='/jsps/book/desc.jsp'/>">Java开发详解</a>--%>
-  <%--</div>--%>
-  <%--<div class="icon">--%>
-    <%--<a href="<c:url value='/jsps/book/desc.jsp'/>"><img src="<c:url value='/book_img/8991366-1_l.jpg'/>" border="0"/></a>--%>
-      <%--<br/>--%>
-   	<%--<a href="<c:url value='/jsps/book/desc.jsp'/>">Java开发详解</a>--%>
-  <%--</div>--%>
-   <%--<div class="icon">--%>
-    <%--<a href="<c:url value='/jsps/book/desc.jsp'/>"><img src="<c:url value='/book_img/9265169-1_l.jpg'/>" border="0"/></a>--%>
-      <%--<br/>--%>
-   	<%--<a href="<c:url value='/jsps/book/desc.jsp'/>">Java开发详解</a>--%>
-  <%--</div>--%>
-   <%--<div class="icon">--%>
-    <%--<a href="<c:url value='/jsps/book/desc.jsp'/>"><img src="<c:url value='/book_img/9317290-1_l.jpg'/>" border="0"/></a>--%>
-      <%--<br/>--%>
-   	<%--<a href="<c:url value='/jsps/book/desc.jsp'/>">Java开发详解</a>--%>
-  <%--</div>--%>
-   <%--<div class="icon">--%>
-    <%--<a href="<c:url value='/jsps/book/desc.jsp'/>"><img src="<c:url value='/book_img/20029394-1_l.jpg'/>" border="0"/></a>--%>
-      <%--<br/>--%>
-   	<%--<a href="<c:url value='/jsps/book/desc.jsp'/>">Java开发详解</a>--%>
-  <%--</div>--%>
-   <%--<div class="icon">--%>
-    <%--<a href="<c:url value='/jsps/book/desc.jsp'/>"><img src="<c:url value='/book_img/20285763-1_l.jpg'/>" border="0"/></a>--%>
-      <%--<br/>--%>
-   	<%--<a href="<c:url value='/jsps/book/desc.jsp'/>">Java开发详解</a>--%>
-  <%--</div>--%>
-   <%--<div class="icon">--%>
-    <%--<a href="<c:url value='/jsps/book/desc.jsp'/>"><img src="<c:url value='/book_img/20385925-1_l.jpg'/>" border="0"/></a>--%>
-      <%--<br/>--%>
-   	<%--<a href="<c:url value='/jsps/book/desc.jsp'/>">Java开发详解</a>--%>
-  <%--</div>--%>
-   <%--<div class="icon">--%>
-    <%--<a href="<c:url value='/jsps/book/desc.jsp'/>"><img src="<c:url value='/book_img/22722790-1_l.jpg'/>" border="0"/></a>--%>
-      <%--<br/>--%>
-   	<%--<a href="<c:url value='/jsps/book/desc.jsp'/>">Java开发详解</a>--%>
-  <%--</div>--%>
-   <%--<div class="icon">--%>
-    <%--<a href="<c:url value='/jsps/book/desc.jsp'/>"><img src="<c:url value='/book_img/22788412-1_l.jpg'/>" border="0"/></a>--%>
-      <%--<br/>--%>
-   	<%--<a href="<c:url value='/jsps/book/desc.jsp'/>">Java开发详解</a>--%>
-  <%--</div>--%>
-
-  
+      <%--<a href="<c:url value='/jsps/book/desc.jsp'/>">${book.bname}</a>--%>
+      <%--</div>--%>
+  <%--</c:forEach>--%>
   </body>
+<script type="text/javascript">
+    function show() {
+        var url="<c:url value="/book?method=${param.method}&cname=${param.cname}"/>";
+        console.log(url);
+        $.getJSON(url,function (JSONData, status) {
+            console.log(url);
+            if (status=="success"){
+                $.each(JSONData,function (index, data) {
+                    $('body').append(
+                        $('<div>').attr({"class":"icon"}).append(
+                            $('<a>').attr({"href":"<c:url value="/book?method=showBook&bid="/>"+data['bid']}).append(
+                                $('<img>').attr({"src":"/BookStore"+data['image'],"border":"0"})
+                            )
+                        ).append($('<br>')).append(
+                            $('<a>').attr({"href":"<c:url value='/jsps/book/desc.jsp'/>"})
+                                .text(data['bname'])
+                        )
+                    );
+                })
+            }
+        })
+    }
+    show();
+</script>
  
 </html>
 

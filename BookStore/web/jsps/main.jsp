@@ -17,6 +17,7 @@
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	  <script src="/js/jquery-3.2.1.min.js"></script>
 	<style type="text/css">
 		*{
 			font-size:10pt;
@@ -37,6 +38,18 @@
 			width: 100%;
 			height: 100%;
 		}
+
+
+		#body .icon {
+			margin:10px;
+			border: solid 2px gray;
+			width: 160px;
+			height: 180px;
+			text-align: center;
+			float: left;
+		}
+
+
 	</style>
   </head>
   
@@ -48,13 +61,31 @@
 		</td>
 	</tr>
 	<tr>
-		<td width="120" style="padding:5px;" align="center" valign="top">
+		<td
+				width="1024"
+			style="padding:5px;" align="center" valign="top" n>
 			<iframe frameborder="0" width="120" src="<c:url value='/category?method=queryAll'/>" name="left"></iframe>
+
 		</td>
-		<td>
-			<iframe frameborder="0" src="<c:url value='/jsps/body.jsp'/>" name="body"></iframe>
-		</td>
+
+
+
+		<%--<td>--%>
+			<%--&lt;%&ndash;<div id="body"></div>&ndash;%&gt;--%>
+			<%--&lt;%&ndash;<c:forEach var="book" items="${requestScope.books}">&ndash;%&gt;--%>
+				<%--&lt;%&ndash;<div class="icon">&ndash;%&gt;--%>
+					<%--&lt;%&ndash;<a href="<c:url value="/book?method=showBook&bid=${book.bid}"/>">&ndash;%&gt;--%>
+						<%--&lt;%&ndash;<img src="<c:url value='${book.image}'/>" border="0"/></a>&ndash;%&gt;--%>
+					<%--&lt;%&ndash;<br/>&ndash;%&gt;--%>
+					<%--&lt;%&ndash;<a href="<c:url value='/jsps/book/desc.jsp'/>">${book.bname}</a>&ndash;%&gt;--%>
+				<%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+			<%--&lt;%&ndash;</c:forEach>&ndash;%&gt;--%>
+			<%--<iframe frameborder="0" src="<c:url value='/jsps/body.jsp'/>" name="body"></iframe>--%>
+		<%--</td>--%>
 	</tr>
 </table>
   </body>
+  <script type="text/javascript">
+
+  </script>
 </html>
