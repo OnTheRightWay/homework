@@ -27,32 +27,33 @@ public class BookService {
     }
     public void edit(Book book){
         Book query = bookDao.queryByBid(book.getBid());
-        Connection conn = JDBCUtil.getConnection();
-        try {
-            conn.setAutoCommit(false);
-            bookDao.delete(conn,book.getBid());
-            bookDao.insert(conn,book);
-            conn.commit();
-            conn.setAutoCommit(true);
-            conn.close();
-        } catch (SQLException e) {
-            try {
-                conn.rollback();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-            try {
-                conn.setAutoCommit(true);
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-            try {
-                conn.close();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-            e.printStackTrace();
-        }
+        bookDao.edit(book.getBid(),book);
+//        Connection conn = JDBCUtil.getConnection();
+//        try {
+//            conn.setAutoCommit(false);
+//            bookDao.delete(conn,book.getBid());
+//            bookDao.insert(conn,book);
+//            conn.commit();
+//            conn.setAutoCommit(true);
+//            conn.close();
+//        } catch (SQLException e) {
+//            try {
+//                conn.rollback();
+//            } catch (SQLException e1) {
+//                e1.printStackTrace();
+//            }
+//            try {
+//                conn.setAutoCommit(true);
+//            } catch (SQLException e1) {
+//                e1.printStackTrace();
+//            }
+//            try {
+//                conn.close();
+//            } catch (SQLException e1) {
+//                e1.printStackTrace();
+//            }
+//            e.printStackTrace();
+//        }
 
     }
 }

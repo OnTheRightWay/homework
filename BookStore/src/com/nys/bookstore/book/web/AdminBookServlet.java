@@ -54,6 +54,7 @@ public class AdminBookServlet extends BaseServlet {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
+        System.out.println(book);
         bookService.edit(book);
 //        System.out.println(book);
         return "f:/adminBook?method=findAll";

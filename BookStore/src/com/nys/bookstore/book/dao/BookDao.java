@@ -96,4 +96,16 @@ public class BookDao {
             e.printStackTrace();
         }
     }
+    public void edit(String bid,Book book){
+        try {
+            queryRunner.update(
+                    "update book set bname=?,price=?,author=?,image=?," +
+                            "cid=?,del='0' where bid=?",
+                    book.getBname(),book.getPrice(),book.getAuthor(),
+                    book.getImage(),book.getCid(),book.getBid()
+            );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
