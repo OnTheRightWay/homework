@@ -95,8 +95,8 @@
       <file leaf-file-name="list.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/jsps/book/list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="55" column="66" lean-forward="false" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="66" />
+            <state relative-caret-position="396">
+              <caret line="59" column="52" lean-forward="true" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -207,7 +207,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="198" />
     <option name="y" value="22" />
     <option name="width" value="1578" />
@@ -572,15 +572,15 @@
       <workItem from="1515670963492" duration="2808000" />
       <workItem from="1515718918865" duration="3974000" />
       <workItem from="1515805487575" duration="54000" />
-      <workItem from="1515824738530" duration="22482000" />
+      <workItem from="1515824738530" duration="23729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151813000" />
+    <option name="totallyTimeSpent" value="153060000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="198" y="22" width="1578" height="1037" extended-state="1" />
+    <frame x="198" y="22" width="1578" height="1037" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1034,8 +1034,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/jsps/book/list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="55" column="66" lean-forward="false" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="66" />
+        <state relative-caret-position="396">
+          <caret line="59" column="52" lean-forward="true" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
           <folding />
         </state>
       </provider>
